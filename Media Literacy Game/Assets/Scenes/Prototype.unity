@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 28680269}
   - component: {fileID: 28680268}
   - component: {fileID: 28680270}
+  - component: {fileID: 28680271}
   m_Layer: 0
   m_Name: transparentLight25
   m_TagString: Untagged
@@ -204,6 +205,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2042966220665499bd80792479e008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &28680271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28680267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!1 &53459877
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,8 +615,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 469, y: -256}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchoredPosition: {x: 411, y: -228}
+  m_SizeDelta: {x: 70.3, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196753716
 MonoBehaviour:
@@ -1959,8 +1974,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 259, y: -256}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchoredPosition: {x: 226.5, y: -228}
+  m_SizeDelta: {x: 70.3, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &688786072
 MonoBehaviour:
@@ -2507,7 +2522,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 15088532d7aa5864dad4cf48eebe22ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2683,8 +2698,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -485, y: -256}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchoredPosition: {x: -427.4, y: -228}
+  m_SizeDelta: {x: 70.3, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806036638
 MonoBehaviour:
