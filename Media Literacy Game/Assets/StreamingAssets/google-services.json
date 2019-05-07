@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "4397896933",
+    "firebase_url": "https://mil-game.firebaseio.com",
+    "project_id": "mil-game",
+    "storage_bucket": "mil-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4397896933:android:2a4890a60cb437fe",
+        "android_client_info": {
+          "package_name": "com.HHS.MLGame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "4397896933-um63knv4np88iq471qnkv7hir2c62259.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXyJDb76z5FBTeIOc_9BmDwyDn0PbWZPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "4397896933-um63knv4np88iq471qnkv7hir2c62259.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
