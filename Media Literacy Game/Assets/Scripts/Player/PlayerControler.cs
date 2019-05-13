@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class PlayerControler : MonoBehaviour
 {
 
     //Declaring some Variables
-    Animator animator;
+    public Animator animator;
     Rigidbody2D rBody;
     float speed;
 
@@ -47,22 +48,26 @@ public class PlayerControler : MonoBehaviour
         {
             jumping = true;
             animator.SetInteger("State", JUMPING);
+            animator.SetBool("IsJumping", true);
         }
         else
         {
             jumping = false;
+            animator.SetBool("IsJumping", false);
         }
 
         // if player is running
         if (!jumping && playerSpeed > 0 || !jumping && playerSpeed < 0)
         {
             animator.SetInteger("State", RUNNING);
+            animator.SetFloat("Speed", Math.Abs(speedX));
         }
 
         // if player is standing still
         if (!jumping && playerSpeed == 0)
         {
             animator.SetInteger("State", IDLE);
+            animator.SetFloat("Speed", 0);
         }
 
         // apply velocity to the player to make it move
@@ -71,6 +76,7 @@ public class PlayerControler : MonoBehaviour
 
     public void MoveLeft()
     {
+        
         speed = -speedX;
     }
 
