@@ -51,12 +51,12 @@ namespace Assets.Scripts.Pacebook
 
 
             quizManager = new QuizManager(questionList);
-            loadNextQuetion();
+            loadNextQuestion();
         }
 
         public void startButtonClick()
         {
-            loadNextQuetion();
+            loadNextQuestion();
 
             welcomeCanvas.gameObject.SetActive(false);
             feedbackCanvas.gameObject.SetActive(false);
@@ -104,7 +104,7 @@ namespace Assets.Scripts.Pacebook
         {
             var nextQuestion = quizManager.nextQuestion();
 
-            loadNextQuetion();
+            loadNextQuestion();
             feedbackCanvas.gameObject.SetActive(false);
             questionCanvas.gameObject.SetActive(true);
         }
@@ -165,7 +165,7 @@ namespace Assets.Scripts.Pacebook
                 }
                 if (quizManager.currentQuestion < quizManager.amountOfQuestions)
                 {
-                    loadNextQuetion();
+                    loadNextQuestion();
                 }
             }
 
@@ -175,7 +175,7 @@ namespace Assets.Scripts.Pacebook
 
         // For loading the quetion
 
-        public void loadNextQuetion()
+        public void loadNextQuestion()
         {
             var nextQuestion = quizManager.nextQuestion();
             int numQuestion = nextQuestion.questionId;
