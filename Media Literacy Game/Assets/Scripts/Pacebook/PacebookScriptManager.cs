@@ -11,8 +11,8 @@ namespace Assets.Scripts.Pacebook
     public class PacebookScriptManager : MonoBehaviour
     {
         // Question Canvas
-        public Button yesBtn;
-        public Button noBtn;
+        public Button rightButton;
+        public Button fakeButton;
         public Image newsImage;
         public Text questionText;
 
@@ -20,36 +20,184 @@ namespace Assets.Scripts.Pacebook
         public Text feedbackText;
         public Button nextBtn;
 
+        // Welcome Canvase
+        public Button startButtom;
+
         // Canvases
         public Canvas questionCanvas;
         public Canvas feedbackCanvas;
+        public Canvas welcomeCanvas;
 
         HardCodedQuestions questions;
 
-        List<QuestionModel> questionList;
+        QuizManager quizManager;
+
+        QuestionModel[] questionList;
 
         // Use this for initialization
         void Start()
         {
+            getQuestions();
+
+            // for later
+            //rightButton.onClick.AddListener(delegate { onButtonClick(Buttons.rightButton); });
+            //fakeButton.onClick.AddListener(delegate { onButtonClick(Buttons.fakeButton); });
+            //startButtom.onClick.AddListener(delegate { onButtonClick(Buttons.StartButton); });
+
             // At the start of the scene
-            questionCanvas.gameObject.SetActive(true);
+            questionCanvas.gameObject.SetActive(false);
             feedbackCanvas.gameObject.SetActive(false);
+            welcomeCanvas.gameObject.SetActive(true);
+
+
+            quizManager = new QuizManager(questionList);
+            loadNextQuetion();
         }
 
-        private void getQuestions()
+        public void startButtonClick()
         {
+            loadNextQuetion();
+
+            welcomeCanvas.gameObject.SetActive(false);
+            feedbackCanvas.gameObject.SetActive(false);
+            questionCanvas.gameObject.SetActive(true);
+        }
+
+        public void rightButtonClick()
+        {
+            bool answeredCorrectly = false;
+
+
+            answeredCorrectly = quizManager.answerQuestion(true);
+            questionCanvas.gameObject.SetActive(false);
+
+            if (answeredCorrectly)
+            {
+                feedbackText.text = "Your answer is good, " + quizManager.currentFeedback;
+            }
+            else
+            {
+                feedbackText.text = "Your answer is not good, " + quizManager.currentFeedback;
+            }
+            feedbackCanvas.gameObject.SetActive(true);
+        }
+
+        public void fakeButtonClick()
+        {
+            bool answeredCorrectly = false;
+
+            answeredCorrectly = quizManager.answerQuestion(false);
+            questionCanvas.gameObject.SetActive(false);
+
+            if (answeredCorrectly)
+            {
+                feedbackText.text = "Your answer is good, " + quizManager.currentFeedback;
+            }
+            else
+            {
+                feedbackText.text = "Your answer is not good, " + quizManager.currentFeedback;
+            }
+            feedbackCanvas.gameObject.SetActive(true);
+        }
+
+        public void nextButtonClick()
+        {
+            var nextQuestion = quizManager.nextQuestion();
+
+            loadNextQuetion();
+            feedbackCanvas.gameObject.SetActive(false);
+            questionCanvas.gameObject.SetActive(true);
+        }
+
+        private QuestionModel[] getQuestions()
+        {
+            questions = new HardCodedQuestions();
+            questions.addQuestions();
             questionList = questions.GetQuestions();
+            return questionList;
         }
 
         // to handle the buttons
-        private void onButtonClick(Button buttonId)
+        private void onButtonClick(Buttons buttonId)
         {
+            if (quizManager.currentQuestion < quizManager.amountOfQuestions)
+            {
+                bool answeredCorrectly = false;
 
-            // At the start
+                switch (buttonId)
+                {
+                    case Buttons.StartButton:
+                        welcomeCanvas.gameObject.SetActive(false);
+                        feedbackCanvas.gameObject.SetActive(false);
+                        questionCanvas.gameObject.SetActive(true);
+                        break;
+
+                    case Buttons.rightButton:
+
+                        answeredCorrectly = quizManager.answerQuestion(true);
+                        questionCanvas.gameObject.SetActive(false);
+
+                        if (answeredCorrectly)
+                        {
+                            feedbackText.text = "Your answer is good, " + quizManager.currentFeedback;
+                        }
+                        else
+                        {
+                            feedbackText.text = "Your answer is not good, " + quizManager.currentFeedback;
+                        }
+                        feedbackCanvas.gameObject.SetActive(true);
+                        break;
+
+                    case Buttons.fakeButton:
+                        answeredCorrectly = quizManager.answerQuestion(true);
+                        questionCanvas.gameObject.SetActive(false);
+
+                        if (answeredCorrectly)
+                        {
+                            feedbackText.text = "Your answer is good, " + quizManager.currentFeedback;
+                        }
+                        else
+                        {
+                            feedbackText.text = "Your answer is not good, " + quizManager.currentFeedback;
+                        }
+                        feedbackCanvas.gameObject.SetActive(true);
+                        break;
+                }
+                if (quizManager.currentQuestion < quizManager.amountOfQuestions)
+                {
+                    loadNextQuetion();
+                }
+            }
+
 
 
         }
+
+        // For loading the quetion
+
+        public void loadNextQuetion()
+        {
+            var nextQuestion = quizManager.nextQuestion();
+            int numQuestion = nextQuestion.questionId;
+            if (nextQuestion != null)
+            {
+                questionText.GetComponent<Text>().text = nextQuestion.question;
+                newsImage.sprite = Resources.Load<Sprite>("PaceBookImages/" + nextQuestion.image);
+            }
+            else
+            {
+                // Do NOTHING BRO
+            }
+        }
+
+        enum Buttons
+        {
+            StartButton = 1,
+            ExitButton = 2,
+            fakeButton = 3,
+            rightButton = 4,
+            feedbackButton = 5,
+            nextButton = 6
+        }
     }
-
-
 }
