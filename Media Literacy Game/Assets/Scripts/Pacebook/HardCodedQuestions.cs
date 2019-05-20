@@ -22,7 +22,7 @@ namespace Assets.Scripts.Pacebook
             QuestionModel question1 = new QuestionModel(1,
                 "Is this fake profile or trustable profile?",
                 "Because the name contains numbers, the account can be seen as a fake account!",
-                false,
+                true,
                 "image1",
                 10);
             //questions.Add(question1);

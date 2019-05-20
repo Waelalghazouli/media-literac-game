@@ -39,11 +39,6 @@ namespace Assets.Scripts.Pacebook
         {
             getQuestions();
 
-            // for later
-            //rightButton.onClick.AddListener(delegate { onButtonClick(Buttons.rightButton); });
-            //fakeButton.onClick.AddListener(delegate { onButtonClick(Buttons.fakeButton); });
-            //startButtom.onClick.AddListener(delegate { onButtonClick(Buttons.StartButton); });
-
             // At the start of the scene
             questionCanvas.gameObject.SetActive(false);
             feedbackCanvas.gameObject.SetActive(false);
@@ -182,7 +177,7 @@ namespace Assets.Scripts.Pacebook
             if (nextQuestion != null)
             {
                 questionText.GetComponent<Text>().text = nextQuestion.question;
-                newsImage.sprite = Resources.Load<Sprite>("PaceBookImages/" + nextQuestion.image);
+                newsImage.sprite = Resources.Load<Sprite>("PaceBookImages/" + nextQuestion.image); //+ nextQuestion.image
             }
             else
             {

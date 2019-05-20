@@ -11,7 +11,8 @@ namespace Assets.Scripts.Pacebook
         QuestionModel[] questions;
         public int amountOfQuestions { get; set; }
         public int currentQuestion { get; set; }
-        public int currentAnswers { get; set; }
+        public int currentAnswer { get; set; }
+        bool correctAnswers { get; set; }
         public string currentFeedback { get; set; }
         HardCodedQuestions testQuestions;
 
@@ -26,7 +27,7 @@ namespace Assets.Scripts.Pacebook
         {
             amountOfQuestions = questions.Length;
             currentQuestion = 0;
-            currentAnswers = 0;
+            currentAnswer = 0;
 
         }
 
@@ -35,12 +36,13 @@ namespace Assets.Scripts.Pacebook
             // pick the current question up
             var CurrentQuestion = questions[currentQuestion];
             currentFeedback = CurrentQuestion.feedback;
+            correctAnswers = CurrentQuestion.rightAnswer;
 
             // check if the answer is correct and return it
             if (checkCurrentAnswer(answer, CurrentQuestion))
             {
                 currentQuestion++;
-                currentAnswers++;
+                currentAnswer++;
                 return true;
             }
             currentQuestion++;
@@ -49,7 +51,7 @@ namespace Assets.Scripts.Pacebook
 
         private bool checkCurrentAnswer(bool answer, QuestionModel currentQuestion)
         {
-            if (currentAnswers.Equals(currentQuestion.rightAnswer))
+            if (answer.Equals(currentQuestion.rightAnswer))
             {
                 return true;
             }
