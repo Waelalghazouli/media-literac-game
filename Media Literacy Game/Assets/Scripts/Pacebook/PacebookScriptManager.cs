@@ -15,6 +15,7 @@ namespace Assets.Scripts.Pacebook
         public Button fakeButton;
         public Image newsImage;
         public Text questionText;
+        public Text amountOfQuestionsText;
 
         // Feedback Canvas
         public Text feedbackText;
@@ -51,17 +52,18 @@ namespace Assets.Scripts.Pacebook
 
         public void startButtonClick()
         {
+            amountOfQuestionsText.GetComponentInChildren<Text>().text = "Question: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
             loadNextQuestion();
 
             welcomeCanvas.gameObject.SetActive(false);
             feedbackCanvas.gameObject.SetActive(false);
             questionCanvas.gameObject.SetActive(true);
+            
         }
 
         public void rightButtonClick()
         {
             bool answeredCorrectly = false;
-
 
             answeredCorrectly = quizManager.answerQuestion(true);
             questionCanvas.gameObject.SetActive(false);
@@ -99,7 +101,12 @@ namespace Assets.Scripts.Pacebook
         {
             var nextQuestion = quizManager.nextQuestion();
 
-            loadNextQuestion();
+            
+            if (quizManager.currentQuestion < quizManager.amountOfQuestions)
+            {
+                loadNextQuestion();
+                amountOfQuestionsText.GetComponentInChildren<Text>().text = "Question: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
+            }
             feedbackCanvas.gameObject.SetActive(false);
             questionCanvas.gameObject.SetActive(true);
         }
