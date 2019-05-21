@@ -21,13 +21,13 @@ namespace Assets.Scripts.Pacebook
         public Text feedbackText;
         public Button nextBtn;
 
-        // Welcome Canvase
+        // Start test Canvase
         public Button startButtom;
 
         // Canvases
         public Canvas questionCanvas;
         public Canvas feedbackCanvas;
-        public Canvas welcomeCanvas;
+        public Canvas startTestCanvas;
 
         HardCodedQuestions questions;
 
@@ -43,7 +43,7 @@ namespace Assets.Scripts.Pacebook
             // At the start of the scene
             questionCanvas.gameObject.SetActive(false);
             feedbackCanvas.gameObject.SetActive(false);
-            welcomeCanvas.gameObject.SetActive(true);
+            startTestCanvas.gameObject.SetActive(true);
 
 
             quizManager = new QuizManager(questionList);
@@ -55,7 +55,7 @@ namespace Assets.Scripts.Pacebook
             amountOfQuestionsText.GetComponentInChildren<Text>().text = "Question: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
             loadNextQuestion();
 
-            welcomeCanvas.gameObject.SetActive(false);
+            startTestCanvas.gameObject.SetActive(false);
             feedbackCanvas.gameObject.SetActive(false);
             questionCanvas.gameObject.SetActive(true);
             
@@ -119,62 +119,6 @@ namespace Assets.Scripts.Pacebook
             return questionList;
         }
 
-        // to handle the buttons
-        private void onButtonClick(Buttons buttonId)
-        {
-            if (quizManager.currentQuestion < quizManager.amountOfQuestions)
-            {
-                bool answeredCorrectly = false;
-
-                switch (buttonId)
-                {
-                    case Buttons.StartButton:
-                        welcomeCanvas.gameObject.SetActive(false);
-                        feedbackCanvas.gameObject.SetActive(false);
-                        questionCanvas.gameObject.SetActive(true);
-                        break;
-
-                    case Buttons.rightButton:
-
-                        answeredCorrectly = quizManager.answerQuestion(true);
-                        questionCanvas.gameObject.SetActive(false);
-
-                        if (answeredCorrectly)
-                        {
-                            feedbackText.text = "Your answer is good, " + quizManager.currentFeedback;
-                        }
-                        else
-                        {
-                            feedbackText.text = "Your answer is not good, " + quizManager.currentFeedback;
-                        }
-                        feedbackCanvas.gameObject.SetActive(true);
-                        break;
-
-                    case Buttons.fakeButton:
-                        answeredCorrectly = quizManager.answerQuestion(true);
-                        questionCanvas.gameObject.SetActive(false);
-
-                        if (answeredCorrectly)
-                        {
-                            feedbackText.text = "Your answer is good, " + quizManager.currentFeedback;
-                        }
-                        else
-                        {
-                            feedbackText.text = "Your answer is not good, " + quizManager.currentFeedback;
-                        }
-                        feedbackCanvas.gameObject.SetActive(true);
-                        break;
-                }
-                if (quizManager.currentQuestion < quizManager.amountOfQuestions)
-                {
-                    loadNextQuestion();
-                }
-            }
-
-
-
-        }
-
         // For loading the quetion
 
         public void loadNextQuestion()
@@ -190,16 +134,6 @@ namespace Assets.Scripts.Pacebook
             {
                 // Do NOTHING BRO
             }
-        }
-
-        enum Buttons
-        {
-            StartButton = 1,
-            ExitButton = 2,
-            fakeButton = 3,
-            rightButton = 4,
-            feedbackButton = 5,
-            nextButton = 6
         }
     }
 }
