@@ -14,6 +14,7 @@ namespace Assets.Scripts.Pacebook
         public int currentAnswer { get; set; }
         bool correctAnswers { get; set; }
         public string currentFeedback { get; set; }
+        public int score { get; set; } // Added
         HardCodedQuestions testQuestions;
 
         public QuizManager(QuestionModel[] questions)
@@ -37,10 +38,12 @@ namespace Assets.Scripts.Pacebook
             var CurrentQuestion = questions[currentQuestion];
             currentFeedback = CurrentQuestion.feedback;
             correctAnswers = CurrentQuestion.rightAnswer;
+            
 
             // check if the answer is correct and return it
             if (checkCurrentAnswer(answer, CurrentQuestion))
             {
+                score = score + CurrentQuestion.score; // Added
                 currentQuestion++;
                 currentAnswer++;
                 return true;
@@ -53,6 +56,7 @@ namespace Assets.Scripts.Pacebook
         {
             if (answer.Equals(currentQuestion.rightAnswer))
             {
+                
                 return true;
             }
             else

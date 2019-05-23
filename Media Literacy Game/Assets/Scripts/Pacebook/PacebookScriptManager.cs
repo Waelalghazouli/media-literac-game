@@ -6,14 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Pacebook
 {
     public class PacebookScriptManager : MonoBehaviour
     {
-        // Question Canvas
+        // Score
+        public Text score;
+        ScoreManager scoreManager;
 
+        // Question Canvas
         public Image newsImage;
         public Text questionText;
         public Text amountOfQuestionsText;
@@ -51,12 +55,13 @@ namespace Assets.Scripts.Pacebook
         // Use this for initialization
         void Start()
         {
+            
             getQuestions();
             getIntroDialogs();
 
             // At the start of the scene
-            introductionCanvas.gameObject.SetActive(true);
-            questionCanvas.gameObject.SetActive(false);
+            introductionCanvas.gameObject.SetActive(false);
+            questionCanvas.gameObject.SetActive(true);
             feedbackCanvas.gameObject.SetActive(false);
             startTestCanvas.gameObject.SetActive(false);
 
@@ -66,6 +71,16 @@ namespace Assets.Scripts.Pacebook
 
             quizManager = new QuizManager(questionList);
             loadNextQuestion();
+
+            Scene pacebook = new Scene();
+            pacebook.name = "Pacebook";
+            scoreManager = new ScoreManager(pacebook);
+        }
+
+        // added
+        public void updatescore(int score)
+        {
+            this.score.GetComponentInChildren<Text>().text = "Score: " + score;
         }
 
         public void startButtonClick()
@@ -88,7 +103,12 @@ namespace Assets.Scripts.Pacebook
 
             if (answeredCorrectly)
             {
+                // Add score
+                scoreManager.latestScore = quizManager.score;
+                score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
+
                 feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
+
             }
             else
             {
@@ -106,6 +126,9 @@ namespace Assets.Scripts.Pacebook
 
             if (answeredCorrectly)
             {
+                // Add score
+                scoreManager.latestScore = quizManager.score;
+                score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
                 feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
             }
             else

@@ -185,8 +185,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28339395}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.665, y: -0.40599996, z: 0}
-  m_LocalScale: {x: 3.4552627, y: 1.7271255, z: 1}
+  m_LocalPosition: {x: 0.665, y: -0.233, z: 0}
+  m_LocalScale: {x: 3.4552627, y: 1.7823935, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1efd06536b2c5145a80d19e374f8a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 444540158}
   newsImage: {fileID: 544360766}
   questionText: {fileID: 1665725636}
   amountOfQuestionsText: {fileID: 1210934408}
@@ -793,7 +794,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Score
+  m_Text: 'Score: '
 --- !u!222 &444540159
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1625,7 +1626,7 @@ RectTransform:
   m_GameObject: {fileID: 1002080387}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90.00098}
-  m_LocalScale: {x: -1, y: -1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1301689764}
   m_Father: {fileID: 509575210}
@@ -1757,7 +1758,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300068, guid: f201589e8a582af4f824329a7d12d593, type: 3}
+  m_Sprite: {fileID: 21300070, guid: f201589e8a582af4f824329a7d12d593, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1946,7 +1947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1223322992
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2023,7 +2024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1292766055
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2976,7 +2977,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300086, guid: f201589e8a582af4f824329a7d12d593, type: 3}
+  m_Sprite: {fileID: 21300084, guid: f201589e8a582af4f824329a7d12d593, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3011,7 +3012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1707642415
 RectTransform:
   m_ObjectHideFlags: 0
