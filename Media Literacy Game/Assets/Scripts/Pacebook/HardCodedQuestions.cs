@@ -20,8 +20,8 @@ namespace Assets.Scripts.Pacebook
         public void addQuestions()
         {
             QuestionModel question1 = new QuestionModel(1,
-                "You recieve a friend request from this account, is this a fake profile or trustable profile?",
-                "It’s a very famous person’s photo,so you should be suspicious. There are some wrong information about real Julia Roberts.",
+                "You recieve a friend request from this account, is this a fake or a trustable profile?",
+                " It’s a very famous person’s photo, so you should be suspicious. There is some wrong information about real Julia Roberts.",
                 false,
                 "image1",
                 10);
@@ -29,24 +29,24 @@ namespace Assets.Scripts.Pacebook
             questions[0] = question1;
 
             QuestionModel question2 = new QuestionModel(2,
-                "You see this account on Pacebook, is this a fake profile or trustable profile?",
-                "Authorized celebrities have blue checkmark next to their names. Also, they have a lot of followers",
+                "You see this account on Pacebook, is this a fake or a trustable profile?",
+                " Authorized celebrities have blue checkmarks next to their names. Also, they have a lot of followers.",
                 true,
                 "image2",
                 10);
             questions[1] = question2;
 
             QuestionModel question3 = new QuestionModel(3,
-                "You see this account on Pacebook, is this a fake profile or trustable profile?",
-                "It’s a very famous person’s photo,so you should be suspicious. If there’s no blue mark, this account is not authorized.",
+                "You see this account on Pacebook, is this a fake or a trustable profile?",
+                " It’s a very famous person’s photo, so you should be suspicious. If there’s no blue marks, this account is not authorized.",
                 false,
                 "image3",
                 10);
             questions[2] = question3;
 
             QuestionModel question4 = new QuestionModel(4,
-                "You see this page on facebook, is this a fake page or trustable page?",
-                "Authorized celebrities have blue checkmark next to their names.",
+                "You see this page on facebook, is this a fake or a trustable page?",
+                " Authorized celebrities have a blue checkmark next to their names.",
                 true,
                 "image4",
                 10);
@@ -54,8 +54,8 @@ namespace Assets.Scripts.Pacebook
             questions[3] = question4;
 
             QuestionModel question5 = new QuestionModel(5,
-                "You see this page posting this news poston Pacebook, can you trust this news?",
-                "Authorized pages have blue checkmark on their names. Also they have a lot of followers and likes.",
+                "You see this page posting this new on Pacebook, can you trust this new?",
+                " Authorized pages have a blue checkmark next to their names. Also, they have a lot of followers and likes.",
                 true,
                 "image5",
                 10);
@@ -63,8 +63,8 @@ namespace Assets.Scripts.Pacebook
             questions[4] = question5;
 
             QuestionModel question6 = new QuestionModel(6,
-                "You see this page posting this news post on Pacebook, can you trust this news?",
-                "Famous and established news companies are more reliable such as BBC, or Times. Also they have a lot of followers and likes.",
+                "You see this page posting this new on Pacebook, can you trust this new?",
+                " Famous and established news companies are more reliable such as BBC, or Times. Also, they have a lot of followers and likes.",
                 true,
                 "image6",
                 10);
@@ -72,8 +72,8 @@ namespace Assets.Scripts.Pacebook
             questions[5] = question6;
 
             QuestionModel question7 = new QuestionModel(7,
-                "You see this news post on Pacebook, can you trust this news?",
-                "Some radical and absurd informations cannot be true. They are just for drawing attention.",
+                "You see this news posted on Pacebook, can you trust this news?",
+                " Some radical and absurd information cannot be true. They are just for drawing attention.",
                 true,
                 "image7",
                 10);
@@ -81,8 +81,8 @@ namespace Assets.Scripts.Pacebook
             questions[6] = question7;
 
             QuestionModel question8 = new QuestionModel(8,
-                "You see this news post on Pacebook, can you trust this news?",
-                "Some radical and absurd informations cannot be true. They are just for drawing attention.",
+                "You see this new posted on Pacebook, can you trust this new?",
+                " Some radical and absurd information cannot be true. They are just for drawing attention.",
                 false,
                 "image8",
                 10);
@@ -90,8 +90,8 @@ namespace Assets.Scripts.Pacebook
             questions[7] = question8;
 
             QuestionModel question9 = new QuestionModel(9,
-                "You see this news post on Pacebook, can you trust this news?",
-                "Some radical and absurd informations cannot be true. They are just for drawing attention.",
+                "You see this new posted on Pacebook, can you trust this new?",
+                " Some radical and absurd information cannot be true. They are just for drawing attention.",
                 false,
                 "image9",
                 10);
@@ -99,8 +99,8 @@ namespace Assets.Scripts.Pacebook
             questions[8] = question9;
 
             QuestionModel question10 = new QuestionModel(10,
-                "You recieve this message from unknow person on Pacebook, can you trust this message?",
-                "Some radical and absurd informations cannot be true. They are just for drawing attention.",
+                "You recieve this message from an unknown user on Pacebook, can you trust this message?",
+                " Some radical and absurd information cannot be true. They are just for drawing attention.",
                 false,
                 "image10",
                 10);

@@ -110,7 +110,7 @@ namespace Assets.Scripts.Pacebook
             }
             else
             {
-                feedbackText.text = "Your answer is not incorrect. " + quizManager.currentFeedback;
+                feedbackText.text = "Your answer is incorrect. " + quizManager.currentFeedback;
             }
             feedbackCanvas.gameObject.SetActive(true);
         }
@@ -131,7 +131,7 @@ namespace Assets.Scripts.Pacebook
 
         public void nextDialogButtonClick()
         {
-            Debug.Log("Amount of dialogs: " + dialogManager.amountOfDialogs());
+            Debug.Log("Amount of dialogues: " + dialogManager.amountOfDialogs());
 
             var nextDialog = dialogManager.nextDialog();
 
@@ -145,7 +145,7 @@ namespace Assets.Scripts.Pacebook
 
         public void previousDialogButtonClick()
         {
-            Debug.Log("Amount of dialogs: " + dialogManager.amountOfDialogs());
+            Debug.Log("Amount of dialogues: " + dialogManager.amountOfDialogs());
 
             var previousDialog = dialogManager.previousDialog();
 
@@ -238,8 +238,8 @@ namespace Assets.Scripts.Pacebook
             {
                 introductionCanvas.gameObject.SetActive(false);
                 startImage.sprite = Resources.Load<Sprite>("PacebookImages/introductionDialog/Mark");
-                startText.GetComponent<Text>().text = "Now you have seen what you can face while you use Pacebook, but let’s start our challenge by answering some questions about the information you have gathered\n\n" +
-                    "Press on Start to begin the Pacebook’s quiz!";
+                startText.GetComponent<Text>().text = "Now you have seen what you can face while you use Pacebook, but let’s start our challenge by answering some questions about the information you have gathered.\n\n" +
+                    "Press Start to begin the Pacebook’s quiz!";
                 startTestCanvas.gameObject.SetActive(true);
             }
         }
