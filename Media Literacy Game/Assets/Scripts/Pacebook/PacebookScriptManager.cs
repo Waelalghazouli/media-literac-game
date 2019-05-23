@@ -20,9 +20,11 @@ namespace Assets.Scripts.Pacebook
 
         // Feedback Canvas
         public Text feedbackText;
+        
 
         // Start test Canvase
-        public Button startButtom;
+        public Text startText;
+        public Image startImage;
 
         // Introduction Dialog Canvas
         public Image speakerImage;
@@ -86,11 +88,11 @@ namespace Assets.Scripts.Pacebook
 
             if (answeredCorrectly)
             {
-                feedbackText.text = "Your answer is good, " + quizManager.currentFeedback;
+                feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
             }
             else
             {
-                feedbackText.text = "Your answer is not good, " + quizManager.currentFeedback;
+                feedbackText.text = "Your answer is incorrect. " + quizManager.currentFeedback;
             }
             feedbackCanvas.gameObject.SetActive(true);
         }
@@ -104,11 +106,11 @@ namespace Assets.Scripts.Pacebook
 
             if (answeredCorrectly)
             {
-                feedbackText.text = "Your answer is good, " + quizManager.currentFeedback;
+                feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
             }
             else
             {
-                feedbackText.text = "Your answer is not good, " + quizManager.currentFeedback;
+                feedbackText.text = "Your answer is not incorrect. " + quizManager.currentFeedback;
             }
             feedbackCanvas.gameObject.SetActive(true);
         }
@@ -235,6 +237,9 @@ namespace Assets.Scripts.Pacebook
             else
             {
                 introductionCanvas.gameObject.SetActive(false);
+                startImage.sprite = Resources.Load<Sprite>("PacebookImages/introductionDialog/Mark");
+                startText.GetComponent<Text>().text = "Now you have seen what you can face while you use Pacebook, but let’s start our challenge by answering some questions about the information you have gathered\n\n" +
+                    "Press on Start to begin the Pacebook’s quiz!";
                 startTestCanvas.gameObject.SetActive(true);
             }
         }
