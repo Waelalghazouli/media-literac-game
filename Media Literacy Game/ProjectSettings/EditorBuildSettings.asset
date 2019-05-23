@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 35acb35cbaca5db4eafbf127e8f9958a
-  - enabled: 0
-    path: 
-    guid: e8d1c05061203844c9d7691b40671b03
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: 4633b3879bf29d94e8a1b4bdb2e7419d
@@ -20,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PaceBook.unity
     guid: 75945f65b98a0ff4e8f69899f92e8890
+  - enabled: 1
+    path: Assets/Scenes/InstagramQuiz.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
