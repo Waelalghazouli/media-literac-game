@@ -16,6 +16,7 @@ namespace Assets.Scripts.Pacebook
         // Score manager
         ScoreManager scoreManager;
         public Text score;
+        int latestScort;
 
         // Question Canvas
         public Image newsImage;
@@ -101,6 +102,7 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
+                this.latestScort = quizManager.score;
                 score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
                 feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
             }
@@ -121,6 +123,7 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
+                this.latestScort = quizManager.score;
                 score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
                 feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
             }
@@ -150,12 +153,12 @@ namespace Assets.Scripts.Pacebook
                 qf_speakerImage.sprite = Resources.Load<Sprite>("PacebookImages/introductionDialog/Mark");
                 if (quizManager.score >= 60)
                 {
-                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + quizManager.score.ToString() +
+                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + scoreManager.latestScore.ToString() +
                         ". It is also possible to retry the challenge again.";
                 }
                 else
                 {
-                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + quizManager.score.ToString() +
+                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + scoreManager.latestScore.ToString() +
                         ". It can absolutley be better in the next time\n\n" +
                         "You can now continue to the next level or retry this challenge!";
                 }
