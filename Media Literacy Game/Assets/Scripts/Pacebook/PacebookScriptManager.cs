@@ -25,7 +25,7 @@ namespace Assets.Scripts.Pacebook
 
         // Feedback Canvas
         public Text feedbackText;
-        
+
 
         // Start test Canvase
         public Text startText;
@@ -65,8 +65,8 @@ namespace Assets.Scripts.Pacebook
             getIntroDialogs();
 
             // At the start of the scene
-            introductionCanvas.gameObject.SetActive(false);
-            questionCanvas.gameObject.SetActive(true);
+            introductionCanvas.gameObject.SetActive(true);
+            questionCanvas.gameObject.SetActive(false);
             feedbackCanvas.gameObject.SetActive(false);
             startTestCanvas.gameObject.SetActive(false);
             quizFinishedCanvas.gameObject.SetActive(false);
@@ -146,7 +146,7 @@ namespace Assets.Scripts.Pacebook
                 feedbackCanvas.gameObject.SetActive(false);
                 questionCanvas.gameObject.SetActive(true);
             }
-            
+
 
             else
             {
@@ -256,7 +256,8 @@ namespace Assets.Scripts.Pacebook
             {
                 previousDialogButton.gameObject.SetActive(false);
             }
-            else {
+            else
+            {
                 previousDialogButton.gameObject.SetActive(true);
             }
 
