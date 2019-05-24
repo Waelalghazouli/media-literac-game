@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Pacebook
@@ -37,11 +38,16 @@ namespace Assets.Scripts.Pacebook
         public Button nextDialogButton;
         public Button previousDialogButton;
 
+        // Quiz Finished Canvas
+        public Image qf_speakerImage;
+        public Text qf_text;
+
         // Canvases
         public Canvas questionCanvas;
         public Canvas feedbackCanvas;
         public Canvas startTestCanvas;
         public Canvas introductionCanvas;
+        public Canvas quizFinishedCanvas;
 
         HardCodedQuestions questions;
         QuizManager quizManager;
@@ -62,6 +68,7 @@ namespace Assets.Scripts.Pacebook
             questionCanvas.gameObject.SetActive(true);
             feedbackCanvas.gameObject.SetActive(false);
             startTestCanvas.gameObject.SetActive(false);
+            quizFinishedCanvas.gameObject.SetActive(false);
 
             previousDialogButton.gameObject.SetActive(false);
             dialogManager = new DialogManager(dialogList);
@@ -94,7 +101,7 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
-                score.GetComponentInChildren<Text>().text = scoreManager.latestScore.ToString();
+                score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
                 feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
             }
             else
@@ -114,7 +121,7 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
-                score.GetComponentInChildren<Text>().text = scoreManager.latestScore.ToString();
+                score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
                 feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
             }
             else
@@ -133,9 +140,28 @@ namespace Assets.Scripts.Pacebook
             {
                 loadNextQuestion();
                 amountOfQuestionsText.GetComponentInChildren<Text>().text = "Question: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
+                feedbackCanvas.gameObject.SetActive(false);
+                questionCanvas.gameObject.SetActive(true);
             }
-            feedbackCanvas.gameObject.SetActive(false);
-            questionCanvas.gameObject.SetActive(true);
+            
+
+            else
+            {
+                qf_speakerImage.sprite = Resources.Load<Sprite>("PacebookImages/introductionDialog/Mark");
+                if (quizManager.score >= 60)
+                {
+                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + quizManager.score.ToString() +
+                        ". It is also possible to retry the challenge again.";
+                }
+                else
+                {
+                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + quizManager.score.ToString() +
+                        ". It can absolutley be better in the next time\n\n" +
+                        "You can now continue to the next level or retry this challenge!";
+                }
+                feedbackCanvas.gameObject.SetActive(false);
+                quizFinishedCanvas.gameObject.SetActive(true);
+            }
         }
 
         public void nextDialogButtonClick()
@@ -194,8 +220,20 @@ namespace Assets.Scripts.Pacebook
             }
             else
             {
-                // dO NoThInG BrO
+
             }
+        }
+
+        public void retryQuizeChallengeClickButton()
+        {
+            quizManager.score = 0;
+            quizFinishedCanvas.gameObject.SetActive(false);
+            questionCanvas.gameObject.SetActive(true);
+        }
+
+        public void backToPrototypeClickButton()
+        {
+            SceneManager.LoadScene("PrototypeScene");
         }
 
         IEnumerator WriteText(string text)

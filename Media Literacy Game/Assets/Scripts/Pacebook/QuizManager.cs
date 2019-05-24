@@ -73,7 +73,7 @@ namespace Assets.Scripts.Pacebook
             }
             else
             {
-                return new QuestionModel();
+                return null;
             }
         }
 
