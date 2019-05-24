@@ -93,7 +93,8 @@ namespace Assets.Scripts.Pacebook
 
             if (answeredCorrectly)
             {
-                scoreManager.updateScore(quizManager.score);
+                scoreManager.latestScore = quizManager.score;
+                score.GetComponentInChildren<Text>().text = scoreManager.latestScore.ToString();
                 feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
             }
             else
@@ -112,6 +113,8 @@ namespace Assets.Scripts.Pacebook
 
             if (answeredCorrectly)
             {
+                scoreManager.latestScore = quizManager.score;
+                score.GetComponentInChildren<Text>().text = scoreManager.latestScore.ToString();
                 feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
             }
             else
