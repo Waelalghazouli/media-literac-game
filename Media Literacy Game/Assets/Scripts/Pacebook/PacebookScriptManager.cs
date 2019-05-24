@@ -14,6 +14,7 @@ namespace Assets.Scripts.Pacebook
     {
         // Score manager
         ScoreManager scoreManager;
+        public Text score;
 
         // Question Canvas
         public Image newsImage;
@@ -92,7 +93,7 @@ namespace Assets.Scripts.Pacebook
 
             if (answeredCorrectly)
             {
-                scoreManager.updateScore();
+                scoreManager.updateScore(quizManager.score);
                 feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
             }
             else

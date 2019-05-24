@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1efd06536b2c5145a80d19e374f8a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 0}
   newsImage: {fileID: 544360766}
   questionText: {fileID: 1665725636}
   amountOfQuestionsText: {fileID: 1210934408}
@@ -815,7 +816,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84daaf2362858004194a70378c7e99b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   score: {fileID: 444540158}
+  scortje: 0
 --- !u!1 &501583091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2759,6 +2763,7 @@ GameObject:
   - component: {fileID: 1673364147}
   - component: {fileID: 1673364146}
   - component: {fileID: 1673364149}
+  - component: {fileID: 1673364150}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2926,6 +2931,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1673364150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673364145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f768b105e63b449bf3a52a8884b814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 444540158}
+  score: 0
 --- !u!1 &1689423059
 GameObject:
   m_ObjectHideFlags: 0
