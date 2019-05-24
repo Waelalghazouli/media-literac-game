@@ -12,8 +12,10 @@ namespace Assets.Scripts.Pacebook
 {
     public class PacebookScriptManager : MonoBehaviour
     {
-        // Question Canvas
+        // Score manager
+        ScoreManager scoreManager;
 
+        // Question Canvas
         public Image newsImage;
         public Text questionText;
         public Text amountOfQuestionsText;
@@ -55,8 +57,8 @@ namespace Assets.Scripts.Pacebook
             getIntroDialogs();
 
             // At the start of the scene
-            introductionCanvas.gameObject.SetActive(true);
-            questionCanvas.gameObject.SetActive(false);
+            introductionCanvas.gameObject.SetActive(false);
+            questionCanvas.gameObject.SetActive(true);
             feedbackCanvas.gameObject.SetActive(false);
             startTestCanvas.gameObject.SetActive(false);
 
@@ -66,6 +68,8 @@ namespace Assets.Scripts.Pacebook
 
             quizManager = new QuizManager(questionList);
             loadNextQuestion();
+
+            scoreManager = new ScoreManager();
         }
 
         public void startButtonClick()
@@ -88,6 +92,7 @@ namespace Assets.Scripts.Pacebook
 
             if (answeredCorrectly)
             {
+                scoreManager.updateScore();
                 feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
             }
             else

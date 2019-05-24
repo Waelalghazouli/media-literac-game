@@ -12,6 +12,7 @@ namespace Assets.Scripts.Pacebook
         public int amountOfQuestions { get; set; }
         public int currentQuestion { get; set; }
         public int currentAnswer { get; set; }
+        public int currentScore { get; set; }
         bool correctAnswers { get; set; }
         public string currentFeedback { get; set; }
         HardCodedQuestions testQuestions;
@@ -37,6 +38,7 @@ namespace Assets.Scripts.Pacebook
             var CurrentQuestion = questions[currentQuestion];
             currentFeedback = CurrentQuestion.feedback;
             correctAnswers = CurrentQuestion.rightAnswer;
+            currentScore = CurrentQuestion.score;
 
             // check if the answer is correct and return it
             if (checkCurrentAnswer(answer, CurrentQuestion))
