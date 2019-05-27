@@ -83,7 +83,11 @@ namespace Assets.Scripts.Pacebook
 
         public void startButtonClick()
         {
-            amountOfQuestionsText.GetComponentInChildren<Text>().text = "Question: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
+            // English
+            //amountOfQuestionsText.GetComponentInChildren<Text>().text = "Question: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
+
+            // Dutch
+            amountOfQuestionsText.GetComponentInChildren<Text>().text = "Vragen: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
             loadNextQuestion();
 
             startTestCanvas.gameObject.SetActive(false);
@@ -104,11 +108,19 @@ namespace Assets.Scripts.Pacebook
                 scoreManager.latestScore = quizManager.score;
                 this.latestScort = quizManager.score;
                 score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
-                feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
+                // English
+                //feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
+
+                // Dutch
+                feedbackText.text = "Jouw antwoord is goed. " + quizManager.currentFeedback;
             }
             else
             {
-                feedbackText.text = "Your answer is incorrect. " + quizManager.currentFeedback;
+                // English
+                //feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
+
+                // Dutch
+                feedbackText.text = "Jouw antwoord is niet goed. " + quizManager.currentFeedback;
             }
             feedbackCanvas.gameObject.SetActive(true);
         }
@@ -125,11 +137,19 @@ namespace Assets.Scripts.Pacebook
                 scoreManager.latestScore = quizManager.score;
                 this.latestScort = quizManager.score;
                 score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
-                feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
+                // English
+                //feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
+
+                // Dutch
+                feedbackText.text = "Jouw antwoord is goed. " + quizManager.currentFeedback;
             }
             else
             {
-                feedbackText.text = "Your answer is incorrect. " + quizManager.currentFeedback;
+                // English
+                //feedbackText.text = "Your answer is correct. " + quizManager.currentFeedback;
+
+                // Dutch
+                feedbackText.text = "Jouw antwoord is niet goed. " + quizManager.currentFeedback;
             }
             feedbackCanvas.gameObject.SetActive(true);
         }
@@ -142,7 +162,11 @@ namespace Assets.Scripts.Pacebook
             if (quizManager.currentQuestion < quizManager.amountOfQuestions)
             {
                 loadNextQuestion();
-                amountOfQuestionsText.GetComponentInChildren<Text>().text = "Question: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
+                // English
+                //amountOfQuestionsText.GetComponentInChildren<Text>().text = "Question: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
+
+                // Dutch
+                amountOfQuestionsText.GetComponentInChildren<Text>().text = "Vragen: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
                 feedbackCanvas.gameObject.SetActive(false);
                 questionCanvas.gameObject.SetActive(true);
             }
@@ -153,14 +177,25 @@ namespace Assets.Scripts.Pacebook
                 qf_speakerImage.sprite = Resources.Load<Sprite>("PacebookImages/introductionDialog/Mark");
                 if (quizManager.score >= 60)
                 {
-                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + scoreManager.latestScore.ToString() +
-                        ". It is also possible to retry the challenge again.";
+                    // English
+                    //qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + scoreManager.latestScore.ToString() +
+                    //    ". It is also possible to retry the challenge again.";
+
+                    // Dutch 
+                    qf_text.GetComponentInChildren<Text>().text = "Goed gedaan! Jouw behaalde score voor de Pacebook uitdaging is: " + scoreManager.latestScore.ToString() +
+                        ". Het is absoluut mogelijk om de uitdaging weer te maken.";
                 }
                 else
                 {
-                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + scoreManager.latestScore.ToString() +
-                        ". It can absolutley be better in the next time\n\n" +
-                        "You can now continue to the next level or retry this challenge!";
+                    // English
+                    //qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + scoreManager.latestScore.ToString() +
+                    //    ". It can absolutley be better in the next time\n\n" +
+                    //    "You can now continue to the next level or retry this challenge!";
+                    
+                    // Dutch
+                    qf_text.GetComponentInChildren<Text>().text = "Goed gedaan! Jouw behaalde score voor de Pacebook uitdaging is: " + scoreManager.latestScore.ToString() +
+                            ". Het kan absoluut beter zijn in de volgende keer\n\n" +
+                            "Je kan nu durkken op Next om door te gaan naar het andere niveau of op Retry om deze uitdaging nog een keer te maken.";
                 }
                 feedbackCanvas.gameObject.SetActive(false);
                 quizFinishedCanvas.gameObject.SetActive(true);
