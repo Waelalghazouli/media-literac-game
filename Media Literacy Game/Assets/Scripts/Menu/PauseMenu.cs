@@ -5,23 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
 
-    public void ResumeGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    public void PauseGame()
+    {   
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
     }
-    void Resume()
+    public void ResumeGame()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
     }
-    void Pause()
+    public void QuitGame()
     {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
+        Debug.Log("QUIT!");
+        Application.Quit();
     }
 }
