@@ -483,11 +483,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1efd06536b2c5145a80d19e374f8a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   score: {fileID: 444540158}
   newsImage: {fileID: 544360766}
   questionText: {fileID: 1665725636}
   amountOfQuestionsText: {fileID: 1210934408}
   feedbackText: {fileID: 566206822}
+  feedbackButton: {fileID: 1969998515}
   startText: {fileID: 2141700006}
   startImage: {fileID: 846236193}
   speakerImage: {fileID: 1018887204}
@@ -497,6 +499,8 @@ MonoBehaviour:
   previousDialogButton: {fileID: 577407870}
   qf_speakerImage: {fileID: 591827122}
   qf_text: {fileID: 2075553553}
+  qf_retry: {fileID: 1786697618}
+  qf_nextLevel: {fileID: 1032900179}
   questionCanvas: {fileID: 1223322994}
   feedbackCanvas: {fileID: 1881721110}
   startTestCanvas: {fileID: 114566239}
@@ -1706,7 +1710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &846236191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2051,8 +2055,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 493, y: -203.4}
-  m_SizeDelta: {x: 225, y: 80}
+  m_AnchoredPosition: {x: 457.19995, y: -203.4}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032900179
 MonoBehaviour:
@@ -2319,7 +2323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1292766055
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3099,7 +3103,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Click
+  m_Text: Start
 --- !u!222 &1666780404
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3600,8 +3604,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 211, y: -203.4}
-  m_SizeDelta: {x: 220, y: 80}
+  m_AnchoredPosition: {x: 112, y: -203.4}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1786697618
 MonoBehaviour:

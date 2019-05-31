@@ -11,6 +11,8 @@ public class PlayerControler : MonoBehaviour
     Rigidbody2D rBody;
     float speed;
 
+    public GameObject player;
+
     // Animation
     bool facingRight, jumping;      // For turning the face to left and right when moving
     private readonly int IDLE = 0;
@@ -29,6 +31,8 @@ public class PlayerControler : MonoBehaviour
         // Storing the references of the animator component which is attached to the player
         animator = GetComponent<Animator>();
         rBody = GetComponent<Rigidbody2D>();
+
+        player.transform.position = new Vector3(PlayerPrefs.GetInt("XPlayer"), transform.position.y, 0);
 
         facingRight = true;         // The player will start by lloking to the right side
 

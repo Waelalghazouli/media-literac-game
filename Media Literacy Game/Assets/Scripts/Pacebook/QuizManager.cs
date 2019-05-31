@@ -8,7 +8,7 @@ namespace Assets.Scripts.Pacebook
 {
     class QuizManager
     {
-        QuestionModel[] questions;
+        List<QuestionModel> questions;
         public int amountOfQuestions { get; set; }
         public int currentQuestion { get; set; }
         public int currentAnswer { get; set; }
@@ -17,7 +17,8 @@ namespace Assets.Scripts.Pacebook
         public string currentFeedback { get; set; }
         HardCodedQuestions testQuestions;
 
-        public QuizManager(QuestionModel[] questions)
+
+        public QuizManager(List<QuestionModel> questions)
         {
             this.questions = questions;
             testQuestions = new HardCodedQuestions();
@@ -26,7 +27,7 @@ namespace Assets.Scripts.Pacebook
 
         private void startQuiz()
         {
-            amountOfQuestions = questions.Length;
+            amountOfQuestions = questions.Count();
             currentQuestion = 0;
             currentAnswer = 0;
 
@@ -65,7 +66,7 @@ namespace Assets.Scripts.Pacebook
 
         public QuestionModel nextQuestion()
         {
-            if(currentQuestion < questions.Length)
+            if (currentQuestion < questions.Count())
             {
                 // get the next quetion
                 var question = questions[currentQuestion];

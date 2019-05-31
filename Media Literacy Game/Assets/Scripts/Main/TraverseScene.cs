@@ -9,4 +9,11 @@ public class TraverseScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex);
     }
+
+    public void goToPrototype()
+    {
+        SceneManager.LoadScene("PrototypeScene");
+        PlayerPrefs.SetInt("XPlayer", 0);
+
+    }
 }
