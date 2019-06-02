@@ -83,8 +83,8 @@ namespace Assets.Scripts.Pacebook
             getTheRightButtinsLanguage();
 
             // At the start of the scene
-            introductionCanvas.gameObject.SetActive(false);
-            questionCanvas.gameObject.SetActive(true);
+            introductionCanvas.gameObject.SetActive(true);
+            questionCanvas.gameObject.SetActive(false);
             feedbackCanvas.gameObject.SetActive(false);
             startTestCanvas.gameObject.SetActive(false);
             quizFinishedCanvas.gameObject.SetActive(false);
