@@ -9,13 +9,25 @@ public class LanguageManager : MonoBehaviour
     public Button optionsButton;
     public Button quitButton;
 
+    public Button DutchFlag;
+    public Button BritishFlag;
+
     int language = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        // it's English on default
-        englishButtonClick();
+        language = PlayerPrefs.GetInt("Language");
+
+        if (language == 0) // Dutch
+        {
+            englishButtonClick();
+        }
+        else // Englsih
+        {
+            dutchButtonClick();
+        }
+
     }
 
     // Update is called once per frame
@@ -28,6 +40,9 @@ public class LanguageManager : MonoBehaviour
         optionsButton.GetComponentInChildren<Text>().text = "Instellingen";
         quitButton.GetComponentInChildren<Text>().text = "Beëindigen";
 
+        // Handle the darkness of the flag
+        BritishFlag.image.color = Color.white;
+        DutchFlag.image.color = Color.grey;
     }
 
     public void englishButtonClick()
@@ -38,5 +53,9 @@ public class LanguageManager : MonoBehaviour
         playButton.GetComponentInChildren<Text>().text = "Play";
         optionsButton.GetComponentInChildren<Text>().text = "Options";
         quitButton.GetComponentInChildren<Text>().text = "Quit";
+
+        // Handle the darkness of the flag
+        DutchFlag.image.color = Color.white;
+        BritishFlag.image.color = Color.grey;
     }
 }

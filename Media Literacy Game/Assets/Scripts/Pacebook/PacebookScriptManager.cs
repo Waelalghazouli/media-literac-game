@@ -79,10 +79,10 @@ namespace Assets.Scripts.Pacebook
 
             // At the start of the scene
             introductionCanvas.gameObject.SetActive(false);
-            questionCanvas.gameObject.SetActive(false);
+            questionCanvas.gameObject.SetActive(true);
             feedbackCanvas.gameObject.SetActive(false);
             startTestCanvas.gameObject.SetActive(false);
-            quizFinishedCanvas.gameObject.SetActive(true);
+            quizFinishedCanvas.gameObject.SetActive(false);
 
             previousDialogButton.gameObject.SetActive(false);
             dialogManager = new DialogManager(dialogList);
