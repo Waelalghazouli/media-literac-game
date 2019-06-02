@@ -70,6 +70,11 @@ namespace Assets.Scripts.Pacebook
         // Use this for initialization
         void Start()
         {
+            startTheGame();
+        }
+
+        public void startTheGame()
+        {
             // get the language
             language = PlayerPrefs.GetInt("Language");
 
@@ -348,7 +353,8 @@ namespace Assets.Scripts.Pacebook
         {
             quizManager.score = 0;
             quizFinishedCanvas.gameObject.SetActive(false);
-            questionCanvas.gameObject.SetActive(true);
+            startTheGame();
+            //introductionCanvas.gameObject.SetActive(true);
         }
 
         public void backToPrototypeClickButton()
