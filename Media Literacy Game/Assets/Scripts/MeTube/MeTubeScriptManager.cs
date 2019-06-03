@@ -5,9 +5,14 @@ using UnityEngine;
 public class MeTubeScriptManager : MonoBehaviour
 {
     public Canvas introductionCanvas;
+    public Canvas questionCanvas;
+    public Canvas startQuizCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
         introductionCanvas.gameObject.SetActive(true);
+        questionCanvas.gameObject.SetActive(false);
+        startQuizCanvas.gameObject.SetActive(false);
     }
 }
