@@ -140,6 +140,7 @@ public class OptionsController : MonoBehaviour
     {
         ensuringQuitPanel.SetActive(false);
         ensuringPathPanel.SetActive(false);
+        ensuringMenuPanel.SetActive(false);
         optionsPanel.SetActive(true);
         optionsCanvas.gameObject.SetActive(true);
     }
