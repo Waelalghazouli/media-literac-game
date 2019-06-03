@@ -101,7 +101,7 @@ namespace Assets.Scripts.MeTube
 
             DialogModel dialog3 = new DialogModel(
                 3,
-                "MeTube has many interesting and funny videos but some of them should be not watched by the audience your age.",
+                "MeTube has many interesting and funny videos but some of them should be not watched by the audience in your age.",
                 "introMeTube3",
                 "Steve");
 
@@ -117,20 +117,20 @@ namespace Assets.Scripts.MeTube
 
             DialogModel dialog5 = new DialogModel(
                 5,
-                "Ofcourse MeTube has much handy aspects to use, such as MeTube tutorials which can teach you something you want such as programming!",
+                "Of course MeTube has much handy aspects to use, such as MeTube tutorials which can teach you something you want such as programming!",
                 "introMeTube5",
                 "Steve");
 
             dialogs.Add(dialog5);
 
-            DialogModel dialog6 = new DialogModel(
-                6,
-                "Now you have got an idea what MeTube is and what kind of puposes it has, but let's start our challenge by answering some questions about " +
-                "the information you have gathered through our tour. Are you ready for it?",
-                "introMeTube6",
-                "Steve");
+            //DialogModel dialog6 = new DialogModel(
+            //    6,
+            //    "Now you have got an idea what MeTube is and what kind of puposes it has, but let's start our challenge by answering some questions about " +
+            //    "the information you have gathered through our tour. Are you ready for it?",
+            //    "introMeTube6",
+            //    "Steve");
 
-            dialogs.Add(dialog6);
+            //dialogs.Add(dialog6);
         }
 
         public List<DialogModel> getDialogs()
