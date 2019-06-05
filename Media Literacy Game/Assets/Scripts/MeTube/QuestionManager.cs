@@ -4,6 +4,7 @@ using Assets.Scripts.Pacebook;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
@@ -30,8 +31,9 @@ public class QuestionManager : MonoBehaviour
 
     // Score manager
     ScoreManager scoreManager;
-    public Text score;
-    int latestScort;
+    public Text scoreText;
+    int meTubeScore;
+    int latestScore;
 
     // Canvases
     public Canvas questionCanvas;
@@ -53,6 +55,23 @@ public class QuestionManager : MonoBehaviour
 
     private void startQuiz()
     {
+
+        // Score manageing
+
+        latestScore = PlayerPrefs.GetInt("Score");
+        meTubeScore = PlayerPrefs.GetInt("MeTubeScore");
+        PlayerPrefs.SetInt("Score", latestScore - meTubeScore);
+        PlayerPrefs.SetInt("MeTubeScore", 0);
+        latestScore = PlayerPrefs.GetInt("Score");
+        if (latestScore < 0)
+        {
+            PlayerPrefs.SetInt("Score", 0);
+            latestScore = PlayerPrefs.GetInt("Score");
+        }
+        scoreText.GetComponentInChildren<Text>().text = "Score: " + latestScore.ToString();
+
+
+        PlayerPrefs.SetInt("XPlayer", 65);
         questionPanel.SetActive(true);
         feedbackPanel.SetActive(false);
         getQuestions();
@@ -68,7 +87,7 @@ public class QuestionManager : MonoBehaviour
         if (nextQuestion != null)
         {
             questionText.GetComponent<Text>().text = nextQuestion.question;
-            newsImage.sprite = Resources.Load<Sprite>("PaceBookImages/" + nextQuestion.image); //+ nextQuestion.image
+            newsImage.sprite = Resources.Load<Sprite>("MeTube/QuestionsImages/" + nextQuestion.image); //+ nextQuestion.image
         }
         else
         {
@@ -86,8 +105,9 @@ public class QuestionManager : MonoBehaviour
         if (answeredCorrectly)
         {
             scoreManager.latestScore = quizManager.score;
-            this.latestScort = quizManager.score;
-            score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
+            this.meTubeScore = quizManager.score;
+            scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
+            PlayerPrefs.SetInt("MeTubeScore", scoreManager.latestScore);
 
             if (language == 0)
             {
@@ -120,6 +140,17 @@ public class QuestionManager : MonoBehaviour
         feedbackPanel.gameObject.SetActive(true);
     }
 
+    public void retryQuizeChallengeClickButton()
+    {
+        SceneManager.LoadScene("MeTube");
+    }
+
+    public void backToPrototypeClickButton()
+    {
+        PlayerPrefs.SetInt("Score", meTubeScore + latestScore);
+        SceneManager.LoadScene("PrototypeScene");
+    }
+
     public void nextQuestionButtonClick()
     {
         var nextQuestion = quizManager.nextQuestion();
@@ -144,17 +175,17 @@ public class QuestionManager : MonoBehaviour
 
         else
         {
-            qf_speakerImage.sprite = Resources.Load<Sprite>("PacebookImages/introductionDialog/Mark");
+            qf_speakerImage.sprite = Resources.Load<Sprite>("MeTube/QuestionsImages/Steve");
             if (quizManager.score >= 60)
             {
                 if (language == 0) // Dutch
                 {
-                    qf_text.GetComponentInChildren<Text>().text = "Goed gedaan! Jouw behaalde score voor de Pacebook uitdaging is: " + scoreManager.latestScore.ToString() +
+                    qf_text.GetComponentInChildren<Text>().text = "Goed gedaan! Jouw behaalde score voor de MeTube uitdaging is: " + scoreManager.latestScore.ToString() +
                     ". Het is absoluut mogelijk om de uitdaging weer te maken.";
                 }
                 if (language == 1) // English
                 {
-                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + scoreManager.latestScore.ToString() +
+                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the MeTube's challenge is: " + scoreManager.latestScore.ToString() +
                         ". It is also possible to retry the challenge again.";
                 }
 
@@ -163,14 +194,14 @@ public class QuestionManager : MonoBehaviour
             {
                 if (language == 0) // Dutch
                 {
-                    qf_text.GetComponentInChildren<Text>().text = "Goed gedaan! Jouw behaalde score voor de Pacebook uitdaging is: " + scoreManager.latestScore.ToString() +
+                    qf_text.GetComponentInChildren<Text>().text = "Goed gedaan! Jouw behaalde score voor de MeTube uitdaging is: " + scoreManager.latestScore.ToString() +
                         ". Het kan absoluut beter zijn in de volgende keer\n\n" +
                         "Je kan nu durkken op Next om door te gaan naar het andere niveau of op Retry om deze uitdaging nog een keer te maken.";
                 }
 
                 if (language == 1) // English
                 {
-                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the Pacebook's challenge is: " + scoreManager.latestScore.ToString() +
+                    qf_text.GetComponentInChildren<Text>().text = "Well done! Your score for the MeTube's challenge is: " + scoreManager.latestScore.ToString() +
                         ". It can absolutley be better in the next time\n\n" +
                         "You can now continue to the next level or retry this challenge!";
                 }
@@ -190,8 +221,9 @@ public class QuestionManager : MonoBehaviour
         if (answeredCorrectly)
         {
             scoreManager.latestScore = quizManager.score;
-            this.latestScort = quizManager.score;
-            score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
+            this.meTubeScore = quizManager.score;
+            scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
+            PlayerPrefs.SetInt("MeTubeScore", scoreManager.latestScore);
 
             if (language == 0)
             {

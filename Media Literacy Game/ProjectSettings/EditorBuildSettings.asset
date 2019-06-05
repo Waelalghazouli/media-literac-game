@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InstagramQuiz.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MeTube.unity
+    guid: 248c0ea8525114148a322dfc5a783b78
   m_configObjects: {}

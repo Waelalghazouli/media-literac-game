@@ -33,6 +33,13 @@ namespace Assets.Scripts.Pacebook
 
         }
 
+        public int getScore()
+        {
+            var CurrentQuestion = questions[currentQuestion];
+            score += CurrentQuestion.score;
+            return score;
+        }
+
         public bool answerQuestion(bool answer)
         {
             // pick the current question up

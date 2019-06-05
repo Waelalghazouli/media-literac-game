@@ -18,8 +18,9 @@ namespace Assets.Scripts.Pacebook
 
         // Score manager
         ScoreManager scoreManager;
-        public Text score;
-        int latestScort;
+        public Text scoreText;
+        int paceBookScore;
+        int latestScore;
 
         // Question Canvas
         public Image newsImage;
@@ -75,6 +76,17 @@ namespace Assets.Scripts.Pacebook
 
         public void startTheGame()
         {
+
+            latestScore = PlayerPrefs.GetInt("Score");
+            paceBookScore = PlayerPrefs.GetInt("PacebookScore");
+            PlayerPrefs.SetInt("Score", latestScore - paceBookScore);
+            PlayerPrefs.SetInt("PacebookScore", 0);
+            latestScore = PlayerPrefs.GetInt("Score");
+            scoreText.GetComponentInChildren<Text>().text = "Score: " + latestScore.ToString();
+
+            // Change the place of the player when he goes out of this room
+            PlayerPrefs.SetInt("XPlayer", 6);
+
             // get the language
             language = PlayerPrefs.GetInt("Language");
 
@@ -130,8 +142,9 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
-                this.latestScort = quizManager.score;
-                score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
+                this.paceBookScore = quizManager.score;
+                scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
+                PlayerPrefs.SetInt("PacebookScore", scoreManager.latestScore);
 
                 if (language == 0)
                 {
@@ -174,8 +187,9 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
-                this.latestScort = quizManager.score;
-                score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
+                this.paceBookScore = quizManager.score;
+                scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
+                PlayerPrefs.SetInt("PacebookScore", scoreManager.latestScore);
 
                 if (language == 0)
                 {
@@ -359,8 +373,8 @@ namespace Assets.Scripts.Pacebook
 
         public void backToPrototypeClickButton()
         {
+            PlayerPrefs.SetInt("Score", paceBookScore + latestScore);
             SceneManager.LoadScene("PrototypeScene");
-            PlayerPrefs.SetInt("XPlayer", 6);
         }
 
         IEnumerator WriteText(string text)

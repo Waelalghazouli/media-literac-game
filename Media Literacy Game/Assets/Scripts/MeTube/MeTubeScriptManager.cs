@@ -12,8 +12,8 @@ public class MeTubeScriptManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        introductionCanvas.gameObject.SetActive(false);
-        questionCanvas.gameObject.SetActive(true);
+        introductionCanvas.gameObject.SetActive(true);
+        questionCanvas.gameObject.SetActive(false);
         startQuizCanvas.gameObject.SetActive(false);
         quizFinishedCanvas.gameObject.SetActive(false);
     }

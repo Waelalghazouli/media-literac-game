@@ -373,7 +373,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1738695757}
         m_MethodName: backToPrototypeClickButton
         m_Mode: 1
         m_Arguments:
@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.99215686, g: 0.8, b: 0.43529412, a: 0.392}
+  m_Color: {r: 0.99215686, g: 0.45097622, b: 0.43529412, a: 0.79607844}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1101,7 +1101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &367704421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1357,7 +1357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &441565037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.066037714, g: 0.004049484, b: 0.004049484, a: 0.6509804}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1416,8 +1416,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 47, y: -68.474976}
-  m_SizeDelta: {x: 100, y: -141.04993}
+  m_AnchoredPosition: {x: 47, y: -48.974976}
+  m_SizeDelta: {x: 100, y: -102.05005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &473577428
 GameObject:
@@ -2982,7 +2982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.990566, g: 0.7995951, b: 0.43454072, a: 0.75686276}
+  m_Color: {r: 0.990566, g: 0.4509804, b: 0.43454072, a: 0.79607844}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3026,8 +3026,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 50, y: 6.5999756}
-  m_SizeDelta: {x: 100, y: -290.29993}
+  m_AnchoredPosition: {x: 50, y: 25.87497}
+  m_SizeDelta: {x: 100, y: -251.74994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &891319583
 GameObject:
@@ -3520,7 +3520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9622642, g: 0.827892, b: 0.5492168, a: 0.7254902}
+  m_Color: {r: 0.99215686, g: 0.4509804, b: 0.43529412, a: 0.79607844}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5304,7 +5304,7 @@ MonoBehaviour:
   feedbackButton: {fileID: 1964308668}
   questionPanel: {fileID: 441565036}
   feedbackPanel: {fileID: 872724720}
-  score: {fileID: 1438515716}
+  scoreText: {fileID: 1438515716}
   questionCanvas: {fileID: 1738695756}
   startTestCanvas: {fileID: 1787538546}
   quizFinishedCanvas: {fileID: 367704424}
@@ -5922,7 +5922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.5137255}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.5882353}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6972,7 +6972,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1738695757}
         m_MethodName: retryQuizeChallengeClickButton
         m_Mode: 1
         m_Arguments:

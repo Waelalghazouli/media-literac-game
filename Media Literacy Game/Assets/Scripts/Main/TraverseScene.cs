@@ -13,7 +13,12 @@ public class TraverseScene : MonoBehaviour
     public void goToPrototype()
     {
         SceneManager.LoadScene("PrototypeScene");
-        PlayerPrefs.SetInt("XPlayer", 0);
+
+    }
+
+    public void goToMeTube()
+    {
+        SceneManager.LoadScene("MeTube");
 
     }
 }

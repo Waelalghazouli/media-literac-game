@@ -13,6 +13,9 @@ public class IntroductionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("Score", 0);
+        PlayerPrefs.SetInt("XPlayer", -10);
+
         language = PlayerPrefs.GetInt("Language");
         Debug.Log(language);
         if (language == 0)
