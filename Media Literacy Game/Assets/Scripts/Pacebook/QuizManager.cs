@@ -25,7 +25,7 @@ namespace Assets.Scripts.Pacebook
             startQuiz();
         }
 
-        private void startQuiz()
+        public void startQuiz()
         {
             amountOfQuestions = questions.Count();
             currentQuestion = 0;
@@ -68,7 +68,7 @@ namespace Assets.Scripts.Pacebook
         {
             if (currentQuestion < questions.Count())
             {
-                // get the next quetion
+                // get the next question
                 var question = questions[currentQuestion];
                 return question;
             }

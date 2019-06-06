@@ -16,4 +16,10 @@ public class TraverseScene : MonoBehaviour
         PlayerPrefs.SetInt("XPlayer", 0);
 
     }
+
+    public void goToMainGame(int xCoordinate)
+    {
+        SceneManager.LoadScene("PrototypeScene");
+        PlayerPrefs.SetInt("XPlayer", xCoordinate);
+    }
 }

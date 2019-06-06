@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PaceBook.unity
     guid: 75945f65b98a0ff4e8f69899f92e8890
   - enabled: 1
-    path: Assets/Scenes/InstagramQuiz.unity
+    path: Assets/Scenes/DoogleQuiz.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Onstagram.unity
+    guid: 4dc6cb218347eb64ea85074b26921120
   m_configObjects: {}
