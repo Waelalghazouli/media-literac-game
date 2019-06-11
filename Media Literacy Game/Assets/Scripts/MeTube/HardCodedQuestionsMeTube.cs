@@ -26,6 +26,7 @@ namespace Assets.Scripts.MeTube
                 "Is this video interesting to watch?",
                 "Tutorials are absolutely to watch and this is an interesting topic but you should not do it at home and get influenced by that.",
                 false,
+                0,
                 "image1",
                 10);
 
@@ -36,6 +37,7 @@ namespace Assets.Scripts.MeTube
                 "Do you think it is appropriate to watch this video on MeTube?",
                 "You are not sure what will happen there, it might be disgusting.",
                 false,
+                0,
                 "image2",
                 10);
 
@@ -46,6 +48,7 @@ namespace Assets.Scripts.MeTube
                 "Do you think this video is nice to watch?",
                 "There is nothing harmful in a lifestyle vlog.",
                 true,
+                0,
                 "image3",
                 10);
 
@@ -56,6 +59,7 @@ namespace Assets.Scripts.MeTube
                 "Do you think it is good to watch this video?",
                 "There is nothing harmful in watching cute animals and gathering information about them.",
                 true,
+                0,
                 "image4",
                 10);
 
@@ -66,6 +70,7 @@ namespace Assets.Scripts.MeTube
                 "Do you think it is a good video to watch on MeTube?",
                 "This video is weird and may cause fear or anxiety.",
                 false,
+                0,
                 "image5",
                 10);
 
@@ -76,6 +81,7 @@ namespace Assets.Scripts.MeTube
                 "Is this an interesting video to watch on MeTube?",
                 "Cooking videos can be very interesting and are not harmful at all.",
                 true,
+                0,
                 "image6",
                 10);
 
@@ -86,6 +92,7 @@ namespace Assets.Scripts.MeTube
                 "Is this a peaceful video to watch on MeTube?",
                 "Videos like this can show very brutal situations and may scare you.",
                 false,
+                0,
                 "image7",
                 10);
 
@@ -96,6 +103,7 @@ namespace Assets.Scripts.MeTube
                 "Is it appropriate to watch videos about fails?",
                 "Usually fails have no harmful content inside, but if they can cause anxiety, do not watch them. Also please do not do those things at home",
                 true,
+                0,
                 "image8",
                 10);
 
@@ -106,6 +114,7 @@ namespace Assets.Scripts.MeTube
                 "Is it a good idea to watch people's journey on MeTube?",
                 "There is nothing wrong with travel videos as long as they do not show anything brutal, in addition some people like to share their journey with the others!",
                 true,
+                0,
                 "image9",
                 10);
             questions.Add(question9);
@@ -115,6 +124,7 @@ namespace Assets.Scripts.MeTube
                 "Do you think all prank videos are appropriate to watch on MeTube?",
                 "Pranks can make you laugh as long as they do not harm anybody and you won’t recreate those things at home",
                 true,
+                0,
                 "image10",
                 10);
 
@@ -131,6 +141,7 @@ namespace Assets.Scripts.MeTube
                 "Is dit een interessante video om te kijken, denk je?",
                 "Tutorials zijn goed om te kijken, maar dit soort tutorial kunnen gevaarlijk voor je zijn!",
                 false,
+                0,
                 "image1",
                 10);
 
@@ -141,6 +152,7 @@ namespace Assets.Scripts.MeTube
                 "Denk je dat dit een geschikte video is om te kijken?",
                 "Je weet niet zeker wat er gaat gebeuren, bovendien kan dit soort filmpjes geweld opwekken bij de kijkers!",
                 false,
+                0,
                 "image2",
                 10);
 
@@ -152,6 +164,7 @@ namespace Assets.Scripts.MeTube
                 "Een vlog kan meestal interessant zijn om te kijken, bovendien vinden sommige mensen het leuk om hen leven met anderen te delen, " +
                 "daarom is er niks mis mee als je zo een video op MeTube kijkt.",
                 true,
+                0,
                 "image3",
                 10);
 
@@ -163,6 +176,7 @@ namespace Assets.Scripts.MeTube
                "Dit is een soort van tutorial waarmee je over een bepaald dier informatie kan verwerven, daarom is er niks mis mee" +
                " om zo een video te bekijken.",
                true,
+               0,
                "image4",
                10);
 
@@ -173,6 +187,7 @@ namespace Assets.Scripts.MeTube
                 "Is het verstandig om dit filmpje te kijken op MeTube?",
                 "Door de foto zie je mensen die messen gebruiken in onhandige manier die wellicht geweld opwekt, dat is dan genoeg om dit soort video te vermijden.",
                 false,
+                0,
                 "image5",
                 10);
 
@@ -184,6 +199,7 @@ namespace Assets.Scripts.MeTube
                 "Video's die over koken gaan zijn meestal leuk om te kijken aangezien je daar waarschijnlijk wat van kan leren. Dit soort filmpjes behoren ook " +
                 "tot tutorials.",
                 true,
+                0,
                 "image6",
                 10);
 
@@ -194,6 +210,7 @@ namespace Assets.Scripts.MeTube
                 "Is dit een veilige video om te kijken, denk je?",
                 "Zo een video kan tot angst leiden, waardoor het onhandig lijkt om dit soort filmpjes te bekijken!",
                 false,
+                0,
                 "image7",
                 10);
 
@@ -205,6 +222,7 @@ namespace Assets.Scripts.MeTube
                 "Video's over falen zijn wel interessant om te kijken, maar soms kan dit soort viedo's angst verwoorzaken waardoor het niet hanig lijkt te zijn om " +
                 "dit soort video's te kijken.",
                 true,
+                0,
                 "image8",
                 10);
 
@@ -215,6 +233,7 @@ namespace Assets.Scripts.MeTube
                 "Is het een goed idee om video's van een reiziger op MeTube te bekijken?",
                 "Er is niks mis met het kijken van een reis van een vlogger, bovendien vinden sommige mensen het leuk om hun leven met anderen te delen.",
                 true,
+                0,
                 "image9",
                 10);
             questions.Add(question9);
@@ -224,6 +243,7 @@ namespace Assets.Scripts.MeTube
                 "Denk je dat alle pranks (grap video's) leuk zijn om te kijken?",
                 "Dit soort filmpjes kunnen we gezellig zijn zo lang het geen kwaadaardige akties inhoudt.",
                 true,
+                0,
                 "image10",
                 10);
 

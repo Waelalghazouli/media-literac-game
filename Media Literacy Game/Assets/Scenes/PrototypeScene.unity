@@ -2195,7 +2195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e868d1579daf274a9c7fc98b8aa17ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 957496701}
+  scoreText: {fileID: 0}
 --- !u!1 &405206068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,7 +2713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &499746134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4424,7 +4424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122603bb3a5fee945a025e27f0085b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MeTubeButton: {fileID: 499746135}
+  MeTubeButton: {fileID: 0}
   door: {fileID: 1567511549}
   player: {fileID: 772744601}
 --- !u!1 &776808990
