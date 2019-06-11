@@ -7,17 +7,14 @@ using UnityEngine.UI;
 public class IntroductionManager : MonoBehaviour
 {
     public Text introText;
-    public Button quitButton;
-    public Button mainButton;
-    public Button optionsButton;
-    public Canvas optionsCanvas;
 
     int language;
 
     // Start is called before the first frame update
     void Start()
     {
-        optionsCanvas.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("Score", 0);
+        PlayerPrefs.SetInt("XPlayer", -10);
 
         language = PlayerPrefs.GetInt("Language");
         Debug.Log(language);
@@ -27,10 +24,7 @@ public class IntroductionManager : MonoBehaviour
                 "Hiervoor heeft hij social media nodig, alleen is hij nog niet bekend met de gevaren die social media met zich mee brengen.\n\n" +
                 "Daarom willen we graag jouw hulp.\n\n" +
                 "Druk op Start om het avontuur van Allen te starten." ;
-
-            quitButton.GetComponentInChildren<Text>().text = "Beëindigen";
-            mainButton.GetComponentInChildren<Text>().text = "Hoofdmenu";
-            optionsButton.GetComponentInChildren<Text>().text = "Instellingen";
+            
         }
 
         if(language == 1)
@@ -39,25 +33,6 @@ public class IntroductionManager : MonoBehaviour
                 "that is why he thinks it is a good idea to use Social Media to make some friendships. " +
                 "The problem is that he is not aware from the dangers while using the any Social Media Platform. That is why your help is needed for this Alien.\n\n" +
                 "Click on Start to begin the journey of the Alien.";
-
-            quitButton.GetComponentInChildren<Text>().text = "End";
-            mainButton.GetComponentInChildren<Text>().text = "Main Menu";
-            optionsButton.GetComponentInChildren<Text>().text = "Options";
         }
-    }
-
-   public void quitButtonClick()
-    {
-        Application.Quit();
-    }
-
-    public void menuButtonClick()
-    {
-        SceneManager.LoadScene("StartMenu");
-    }
-
-    public void optionsButtonClick()
-    {
-        optionsCanvas.gameObject.SetActive(true);
     }
 }

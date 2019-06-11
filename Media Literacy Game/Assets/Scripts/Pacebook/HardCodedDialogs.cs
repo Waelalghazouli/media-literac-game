@@ -18,6 +18,9 @@ namespace Assets.Scripts.Pacebook
 
         public void addDutchIntroductionDialogs()
         {
+
+            dialogs.Clear();
+
             DialogModel dialog1 = new DialogModel(
                 1,
                 "Hoi, ik ben hier om jou rond te leiden door dit gebouw. " +
@@ -81,6 +84,8 @@ namespace Assets.Scripts.Pacebook
 
         public void addIntroductionDialogs()
         {
+            dialogs.Clear();
+
             DialogModel dialog1 = new DialogModel(
                 1,
                 "Hey there, I am here to give you a tour inside this building. " +

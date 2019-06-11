@@ -412,8 +412,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197087312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.047, y: -0.018, z: 0}
-  m_LocalScale: {x: 0.91398126, y: 0.73802644, z: 1}
+  m_LocalPosition: {x: 0.121, y: -0.018, z: 0}
+  m_LocalScale: {x: 1.0799319, y: 0.73802644, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -886,7 +886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &392767108
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1210,6 +1210,8 @@ MonoBehaviour:
   playButton: {fileID: 0}
   optionsButton: {fileID: 0}
   quitButton: {fileID: 0}
+  DutchFlag: {fileID: 0}
+  BritishFlag: {fileID: 0}
 --- !u!1 &643636626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,6 +1817,8 @@ MonoBehaviour:
   playButton: {fileID: 938534726}
   optionsButton: {fileID: 1816014561}
   quitButton: {fileID: 1711362616}
+  DutchFlag: {fileID: 599395360}
+  BritishFlag: {fileID: 1251498788}
 --- !u!1 &1219043187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,7 +2138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9215687, g: 0.9215687, b: 0.9215687, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
