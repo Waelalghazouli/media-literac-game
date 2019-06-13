@@ -81,6 +81,7 @@ namespace Assets.Scripts.Pacebook
             paceBookScore = PlayerPrefs.GetInt("PacebookScore");
             PlayerPrefs.SetInt("Score", latestScore - paceBookScore);
             PlayerPrefs.SetInt("PacebookScore", 0);
+            paceBookScore = PlayerPrefs.GetInt("PacebookScore");
             latestScore = PlayerPrefs.GetInt("Score");
             scoreText.GetComponentInChildren<Text>().text = "Score: " + latestScore.ToString();
 
@@ -142,9 +143,11 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
+                paceBookScore = PlayerPrefs.GetInt("PacebookScore");
                 this.paceBookScore = quizManager.score;
                 scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
                 PlayerPrefs.SetInt("PacebookScore", scoreManager.latestScore);
+                paceBookScore = PlayerPrefs.GetInt("PacebookScore");
 
                 if (language == 0)
                 {
@@ -187,9 +190,11 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
+                paceBookScore = PlayerPrefs.GetInt("PacebookScore");
                 this.paceBookScore = quizManager.score;
                 scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
                 PlayerPrefs.SetInt("PacebookScore", scoreManager.latestScore);
+                paceBookScore = PlayerPrefs.GetInt("PacebookScore");
 
                 if (language == 0)
                 {
@@ -365,7 +370,7 @@ namespace Assets.Scripts.Pacebook
 
         public void retryQuizeChallengeClickButton()
         {
-            quizManager.score = 0;
+            PlayerPrefs.SetInt("PacebookScore", 0);
             quizFinishedCanvas.gameObject.SetActive(false);
             startTheGame();
             //introductionCanvas.gameObject.SetActive(true);

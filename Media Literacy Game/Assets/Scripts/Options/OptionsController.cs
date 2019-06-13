@@ -133,6 +133,9 @@ public class OptionsController : MonoBehaviour
 
     public void ensuredMenuButtonClick()
     {
+        PlayerPrefs.SetInt("PacebookScore", 0);
+        PlayerPrefs.SetInt("MeTubeScore", 0);
+        PlayerPrefs.SetInt("Onstagram", 0);
         SceneManager.LoadScene("StartMenu");
     }
 
@@ -151,6 +154,9 @@ public class OptionsController : MonoBehaviour
 
     public void ensuredPathButtonClick()
     {
+        PlayerPrefs.SetInt("PacebookScore", 0);
+        PlayerPrefs.SetInt("MeTubeScore", 0);
+        PlayerPrefs.SetInt("Onstagram", 0);
         SceneManager.LoadScene("PrototypeScene");
     }
 }

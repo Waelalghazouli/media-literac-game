@@ -22,6 +22,16 @@ public class TraverseScene : MonoBehaviour
 
     }
 
+    public void goToOnstagram()
+    {
+        SceneManager.LoadScene("Onstagram");
+    }
+
+    public void goToDoodle()
+    {
+        SceneManager.LoadScene("DoogleQuiz");
+    }
+
     public void goToMainGame(int xCoordinate)
     {
         SceneManager.LoadScene("PrototypeScene");

@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class VisibilityChangeScript : MonoBehaviour
 {
 
-    public Button MeTubeButton;
+    public Button EnterButton;
     public GameObject door;
     public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("niet uitgevoerd");
+        EnterButton.gameObject.SetActive(false);
+        Debug.Log("wel uitgevoerd");
+
 
     }
 
@@ -34,11 +38,11 @@ public class VisibilityChangeScript : MonoBehaviour
         if (player.gameObject.transform.position.x > door.gameObject.transform.position.x - 1 &&
                 player.gameObject.transform.position.x < door.gameObject.transform.position.x + 1)
         {
-            MeTubeButton.gameObject.SetActive(true);
+            EnterButton.gameObject.SetActive(true);
         }
         else
         {
-            MeTubeButton.gameObject.SetActive(false);
+            EnterButton.gameObject.SetActive(false);
         }
     }
 }

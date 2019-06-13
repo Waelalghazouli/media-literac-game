@@ -10,6 +10,7 @@ public class PrototypeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         score = PlayerPrefs.GetInt("Score");
         scoreText.GetComponentInChildren<Text>().text = "Score: " + score.ToString();
     }

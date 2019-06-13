@@ -18,8 +18,9 @@ namespace Assets.Scripts.Pacebook
 
         // Score manager
         ScoreManager scoreManager;
-        public Text score;
-        int latestScort;
+        public Text scoreText;
+        int onstagramScore;
+        int latestScore;
 
         // Question Canvas
         public Image newsImage;
@@ -77,7 +78,25 @@ namespace Assets.Scripts.Pacebook
         {
             //multiAmountOfQuestionsText = amountOfQuestionsText;
 
-            // get the language
+            startOnstagram();
+        }
+
+        private void startOnstagram()
+        {
+
+            PlayerPrefs.SetInt("XPlayer", 175);
+
+            // Score manageing
+
+            latestScore = PlayerPrefs.GetInt("Score");
+            onstagramScore = PlayerPrefs.GetInt("OnstagramScore"); // hhh
+            PlayerPrefs.SetInt("Score", latestScore - onstagramScore);
+            PlayerPrefs.SetInt("OnstagramScore", 0); // hhh
+            latestScore = PlayerPrefs.GetInt("Score");
+            onstagramScore = PlayerPrefs.GetInt("OnstagramScore");
+            
+            scoreText.GetComponentInChildren<Text>().text = "Score: " + latestScore.ToString();
+
             language = PlayerPrefs.GetInt("Language");
 
             getQuestions();
@@ -114,7 +133,7 @@ namespace Assets.Scripts.Pacebook
             {
                 // English
                 amountOfQuestionsText.GetComponentInChildren<Text>().text = "Question: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
-                multiAmountOfQuestionsText.GetComponentInChildren<Text>().text = "Vragen: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
+                multiAmountOfQuestionsText.GetComponentInChildren<Text>().text = "Question: " + (quizManager.currentQuestion + 1).ToString() + "/" + quizManager.amountOfQuestions.ToString();
 
             }
 
@@ -150,8 +169,11 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
-                this.latestScort = quizManager.score;
-                score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
+                onstagramScore = PlayerPrefs.GetInt("OnstagramScore");
+                this.onstagramScore = quizManager.score;
+                scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
+                PlayerPrefs.SetInt("OnstagramScore", scoreManager.latestScore);
+                onstagramScore = PlayerPrefs.GetInt("OnstagramScore");
 
                 if (language == 0)
                 {
@@ -206,8 +228,11 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
-                this.latestScort = quizManager.score;
-                score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
+                onstagramScore = PlayerPrefs.GetInt("OnstagramScore");
+                this.onstagramScore = quizManager.score;
+                scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
+                PlayerPrefs.SetInt("OnstagramScore", scoreManager.latestScore);
+                onstagramScore = PlayerPrefs.GetInt("OnstagramScore");
 
                 if (language == 0)
                 {
@@ -264,8 +289,11 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
-                this.latestScort = quizManager.score;
-                score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
+                onstagramScore = PlayerPrefs.GetInt("OnstagramScore");
+                this.onstagramScore = quizManager.score;
+                scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
+                PlayerPrefs.SetInt("OnstagramScore", scoreManager.latestScore);
+                onstagramScore = PlayerPrefs.GetInt("OnstagramScore");
 
                 if (language == 0)
                 {
@@ -308,8 +336,12 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
-                this.latestScort = quizManager.score;
-                score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
+                onstagramScore = PlayerPrefs.GetInt("OnstagramScore");
+                this.onstagramScore = quizManager.score;
+                scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
+                PlayerPrefs.SetInt("OnstagramScore", scoreManager.latestScore);
+                onstagramScore = PlayerPrefs.GetInt("OnstagramScore");
+
 
                 if (language == 0)
                 {
@@ -352,8 +384,11 @@ namespace Assets.Scripts.Pacebook
             if (answeredCorrectly)
             {
                 scoreManager.latestScore = quizManager.score;
-                this.latestScort = quizManager.score;
-                score.GetComponentInChildren<Text>().text = "Score: " + scoreManager.latestScore.ToString();
+                onstagramScore = PlayerPrefs.GetInt("OnstagramScore");
+                this.onstagramScore = quizManager.score;
+                scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
+                PlayerPrefs.SetInt("OnstagramScore", scoreManager.latestScore);
+                onstagramScore = PlayerPrefs.GetInt("OnstagramScore");
 
                 if (language == 0)
                 {
@@ -560,8 +595,8 @@ namespace Assets.Scripts.Pacebook
 
         public void backToPrototypeClickButton()
         {
+            PlayerPrefs.SetInt("Score", onstagramScore + latestScore);
             SceneManager.LoadScene("PrototypeScene");
-            PlayerPrefs.SetInt("XPlayer", 6);
         }
 
         IEnumerator WriteText(string text)
@@ -658,7 +693,7 @@ namespace Assets.Scripts.Pacebook
             {
                 feedbackButton.GetComponentInChildren<Text>().text = "Next";
                 qf_retry.GetComponentInChildren<Text>().text = "Retry";
-                qf_nextLevel.GetComponentInChildren<Text>().text = "Exit";
+                qf_nextLevel.GetComponentInChildren<Text>().text = "Next Level";
                 nextDialogButton.GetComponentInChildren<Text>().text = "Next";
                 previousDialogButton.GetComponentInChildren<Text>().text = "Previous";
             }

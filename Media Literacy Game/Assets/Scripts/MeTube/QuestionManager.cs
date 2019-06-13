@@ -62,12 +62,10 @@ public class QuestionManager : MonoBehaviour
         meTubeScore = PlayerPrefs.GetInt("MeTubeScore");
         PlayerPrefs.SetInt("Score", latestScore - meTubeScore);
         PlayerPrefs.SetInt("MeTubeScore", 0);
+        meTubeScore = PlayerPrefs.GetInt("MeTubeScore");
         latestScore = PlayerPrefs.GetInt("Score");
-        if (latestScore < 0)
-        {
-            PlayerPrefs.SetInt("Score", 0);
-            latestScore = PlayerPrefs.GetInt("Score");
-        }
+ 
+
         scoreText.GetComponentInChildren<Text>().text = "Score: " + latestScore.ToString();
 
 
@@ -105,9 +103,11 @@ public class QuestionManager : MonoBehaviour
         if (answeredCorrectly)
         {
             scoreManager.latestScore = quizManager.score;
+            meTubeScore = PlayerPrefs.GetInt("MeTubeScore");
             this.meTubeScore = quizManager.score;
             scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
             PlayerPrefs.SetInt("MeTubeScore", scoreManager.latestScore);
+            meTubeScore = PlayerPrefs.GetInt("MeTubeScore");
 
             if (language == 0)
             {
@@ -221,9 +221,11 @@ public class QuestionManager : MonoBehaviour
         if (answeredCorrectly)
         {
             scoreManager.latestScore = quizManager.score;
+            meTubeScore = PlayerPrefs.GetInt("MeTubeScore");
             this.meTubeScore = quizManager.score;
             scoreText.GetComponentInChildren<Text>().text = "Score: " + (latestScore + scoreManager.latestScore).ToString();
             PlayerPrefs.SetInt("MeTubeScore", scoreManager.latestScore);
+            meTubeScore = PlayerPrefs.GetInt("MeTubeScore");
 
             if (language == 0)
             {
